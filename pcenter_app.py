@@ -3,7 +3,7 @@ import itertools, math, json
 import matplotlib.pyplot as plt
 from matplotlib.patches import Circle
 
-# ---------- Core helpers ----------
+# Core helpers
 def dist(a, b):
     # Euclidean distance between two locations (km)
     d = math.hypot(a[0]-b[0], a[1]-b[1])
@@ -41,7 +41,7 @@ def validate(coords, p, max_n=25):
     if nCr(n, p) > 2_000_000:
         st.warning("Large search space (n choose p). Computation may be slow.")
 
-# ---------- Visualization ----------
+# Visualization
 def visualize(coords, combo, z):
     fig, ax = plt.subplots(figsize=(6,6))
     xs, ys = zip(*coords.values())
@@ -64,7 +64,7 @@ def visualize(coords, combo, z):
     ax.grid(True, alpha=0.2)
     st.pyplot(fig)
 
-# ---------- Streamlit UI ----------
+# Streamlit UI
 st.set_page_config(page_title="Emergency Station Optimizer", page_icon="🚒", layout="centered")
 
 st.markdown("<h2 style='text-align:center; color:#333;'>🚒 Emergency Station Optimization</h2>", unsafe_allow_html=True)
