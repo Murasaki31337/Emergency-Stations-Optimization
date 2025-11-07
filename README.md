@@ -11,50 +11,15 @@ The tool is an **interactive Streamlit web app** where users can enter data, com
 ## 🧭 Problem Description
 City planners must decide where to build a limited number of emergency stations so that every neighborhood can be reached quickly during an emergency.
 
-The P-Center model mathematically minimizes the worst-case distance between neighborhoods and emergency stations:
-
-min
-⁡
-𝑧
-=
-max
-⁡
-𝑗
-∈
-𝐽
-  
-min
-⁡
-𝑖
-∈
-𝐼
-  
-𝑑
-𝑖
-𝑗
-minz=
-j∈J
-max
-	​
-
-i∈I
-min
-	​
-
-d
-ij
-	​
-
+The **P-Center model** mathematically minimizes the worst-case distance between demand points and facilities:
+Minimize:  z = max_j ( min_i d_ij )
 
 where:
-
-I — candidate station sites
-
-J — demand points (neighborhoods)
-
-d₍ᵢⱼ₎ — distance between station i and neighborhood j
-
-p — number of stations to build 
+I  = candidate station sites
+J  = demand points (neighborhoods)
+d_ij = distance between station i and neighborhood j
+p  = number of stations to build
+  
 
 ---
 
