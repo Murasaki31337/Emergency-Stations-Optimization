@@ -3,14 +3,11 @@ import itertools, math, json
 import matplotlib.pyplot as plt
 from matplotlib.patches import Circle
 
-# Core helpers
 def dist(a, b):
-    # Euclidean distance between two locations (km)
     d = math.hypot(a[0]-b[0], a[1]-b[1])
     return 0.0 if abs(d) < 1e-12 else d
 
 def p_center(coords, p):
-    # Discrete P-Center: choose p station sites minimizing max service distance
     D = {(i, j): dist(coords[i], coords[j]) for i in coords for j in coords}
     best_combo, best_z = None, float("inf")
     for combo in itertools.combinations(coords.keys(), p):
